@@ -45,7 +45,7 @@ class PortfolioController {
          */
         this.config = {
             typewriter: {
-                strings: ['Founder', 'Analytics Learner', 'Youth Leader', 'Sustainability Researcher'],
+                strings: ['Founder', 'Business Consultant', 'Youth Leader', 'Sustainability Researcher'],
                 typeSpeed: 50,          // Typing speed in milliseconds per character
                 backSpeed: 30,          // Backspacing speed in milliseconds per character
                 backDelay: 1500,        // Delay before starting to backspace
