@@ -1475,7 +1475,6 @@ main hr {
     background: rgba(139, 92, 246, 0.05);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 30px;
     border: 1px solid rgba(139, 92, 246, 0.2);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
@@ -1487,6 +1486,10 @@ main hr {
     transform: translateY(-8px);
     border-color: rgba(139, 92, 246, 0.4);
     box-shadow: 0 15px 50px rgba(139, 92, 246, 0.3);
+}
+
+.campus-card:hover .campus-image img {
+    transform: scale(1.1);
 }
 
 .campus-card.featured {
@@ -1505,6 +1508,51 @@ main hr {
     font-weight: 600;
     transform: rotate(45deg);
     box-shadow: 0 4px 10px rgba(139, 92, 246, 0.4);
+    z-index: 10;
+}
+
+/* Image Container */
+.campus-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+    margin: -1px -1px 0 -1px;
+}
+
+.campus-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.campus-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(139, 92, 246, 0.3) 0%,
+        rgba(139, 92, 246, 0.5) 50%,
+        rgba(17, 24, 39, 0.9) 100%
+    );
+}
+
+/* Content Container */
+.campus-content {
+    padding: 30px;
+}
+
+/* Header with Icon and Certificate Button */
+.campus-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
 }
 
 .campus-icon {
@@ -1516,7 +1564,6 @@ main hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
     border: 2px solid rgba(139, 92, 246, 0.3);
 }
 
@@ -1526,6 +1573,27 @@ main hr {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.certificate-btn {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    background: linear-gradient(135deg, #8B5CF6, #EC4899);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.certificate-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
 }
 
 .campus-card h3 {
@@ -1576,68 +1644,28 @@ main hr {
     font-size: 0.9rem;
 }
 
-/* Certificate Button */
-.certificate-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 35px;
-    height: 35px;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.15));
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(139, 92, 246, 0.3);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    z-index: 10;
-}
-
-.certificate-btn:hover {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.3));
-    border-color: rgba(139, 92, 246, 0.5);
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
-}
-
-.certificate-btn i {
-    font-size: 16px;
-    background: linear-gradient(135deg, #8B5CF6, #EC4899);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Adjust for featured card to avoid overlap with ribbon */
-.campus-card.featured .certificate-btn {
-    top: 60px;
-}
-
-/* Responsive Design for Research and Campus Sections */
-@media screen and (max-width: 768px) {
-    .research-container {
-        grid-template-columns: 1fr;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .campus-image {
+        height: 180px;
     }
-
-    .campus-container {
-        grid-template-columns: 1fr;
+    
+    .campus-content {
+        padding: 20px;
     }
-
-    .research-highlights {
-        grid-template-columns: 1fr;
+    
+    .campus-header {
+        gap: 10px;
     }
-
+    
     .certificate-btn {
-        width: 32px;
-        height: 32px;
-    }
-
-    .certificate-btn i {
-        font-size: 14px;
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+        font-size: 1.1rem;
     }
 }
+
 
 /* About Section Styles */
 .aboutSection {
