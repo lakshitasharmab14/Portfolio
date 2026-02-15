@@ -1916,6 +1916,10 @@ main hr {
 }
 
 /* Certifications Section */
+.certificationsSection {
+    padding: 80px 0;
+}
+
 .education-container {
     margin-top: 50px;
 }
@@ -1923,15 +1927,16 @@ main hr {
 .certifications-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
+    gap: 30px;
+    margin-top: 50px;
+    padding: 0 20px;
 }
 
 .certification-card {
     background: rgba(139, 92, 246, 0.05);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 30px;
+    padding: 35px 30px;
     border: 1px solid rgba(139, 92, 246, 0.2);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
@@ -1966,15 +1971,16 @@ main hr {
 .certification-card.featured {
     background: rgba(139, 92, 246, 0.08);
     border: 2px solid rgba(139, 92, 246, 0.4);
+    padding: 35px 30px;
 }
 
 .cert-badge {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 20px;
+    right: 20px;
     background: linear-gradient(135deg, #8B5CF6, #EC4899);
     color: white;
-    padding: 6px 14px;
+    padding: 8px 16px;
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 600;
@@ -1990,7 +1996,7 @@ main hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     border: 2px solid rgba(139, 92, 246, 0.3);
     transition: all 0.3s ease;
 }
@@ -2016,8 +2022,8 @@ main hr {
 .certification-card h3 {
     font-size: 1.2rem;
     color: var(--text-primary);
-    margin-bottom: 15px;
-    line-height: 1.4;
+    margin-bottom: 20px;
+    line-height: 1.5;
     min-height: 60px;
 }
 
@@ -2027,7 +2033,8 @@ main hr {
     gap: 10px;
     color: var(--text-muted);
     font-size: 0.9rem;
-    margin-bottom: 20px;
+    margin-top: auto;
+    padding-top: 15px;
 }
 
 .cert-provider i {
@@ -2038,18 +2045,38 @@ main hr {
     font-size: 16px;
 }
 
-
 /* Responsive Design for Certifications */
 @media screen and (max-width: 768px) {
+    .certificationsSection {
+        padding: 60px 0;
+    }
+
     .certifications-grid {
         grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 40px;
+        padding: 0 15px;
+    }
+
+    .certification-card {
+        padding: 30px 25px;
+    }
+
+    .certification-card.featured {
+        padding: 30px 25px;
+    }
+
+    .cert-badge {
+        top: 15px;
+        right: 15px;
+        padding: 6px 12px;
     }
 
     .certification-card h3 {
         min-height: auto;
+        font-size: 1.1rem;
     }
 }
-
 /* Contact Section Styles */
 .contactSection {
     max-width: 90%;
